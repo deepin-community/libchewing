@@ -1,0 +1,372 @@
+libchewing (0.5.1-4) unstable; urgency=medium
+
+  * Team upload.
+  * Rebuild against gcc 8.
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * debian/rules: Support nocheck
+  * debian/changelog: Remove blank line in changelog
+  * Add upstream metadata
+
+  [ Boyuan Yang ]
+  * debian: Apply "wrap-and-sort -abst".
+  * debian/control:
+    + Update YunQiang Su's email address and use the @debian.org one.
+    + Refresh build dependency list
+    + Bump Standards-Version to 4.2.1.
+    + Update Vcs-* fields and use repo under input-method-team group.
+    + Mark libchewing3-dev as M-A: same as suggested by M-A hinter.
+  * debian/rules: Modernize packaging instructions and use
+    dh_missing tool.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 12 Sep 2018 21:37:34 -0400
+
+libchewing (0.5.1-3) unstable; urgency=medium
+
+  * Do not use parallel test since it is not supported by libchewing.
+  * Use https in Format in debian/copyright.
+  * Update Build-Depends for compat 11.
+  * Remove unnecessary field Testsuite.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Fri, 22 Jun 2018 14:17:54 +0800
+
+libchewing (0.5.1-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.1.4.
+  * Bump compat to 11.
+  * Update Vcs-* fields to salsa.
+  * Update Maintainer to new mailing list.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sat, 26 May 2018 09:58:41 +0800
+
+libchewing (0.5.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Wed, 18 May 2016 19:35:42 +0800
+
+libchewing (0.5.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.8.
+  * Update Vcs-* fields.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 02 May 2016 11:39:04 +0800
+
+libchewing (0.4.0-4) unstable; urgency=medium
+
+  * Change XS-Testsuite to Testsuite.
+  * Update Uploaders email.
+  * Update Vcs-* fields.
+  * Remove libchewing3-dbg in favor of dbgsym.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sun, 20 Dec 2015 20:38:49 +0800
+
+libchewing (0.4.0-3) unstable; urgency=medium
+
+  * Fix compiler-flags-hidden
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Tue, 12 May 2015 21:15:31 +0800
+
+libchewing (0.4.0-2) unstable; urgency=medium
+
+  * Bump standard version to 3.9.6
+  * Fix invalid-short-name-in-dep5-copyright
+  * Update debian/rules
+    - Install include into /usr/include/triplet
+    - Don't use --disable-silent-rules
+    - Add --fail-missing in dh_install
+  * Tweak debian/control
+  * Use debian/clean to remove generated files
+  * Remove libchewing.a in libchewing3-dev
+  * Add debian/gbp.conf
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Thu, 25 Sep 2014 23:00:56 +0800
+
+libchewing (0.4.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add --disable-silent-rules for compiler-flags-hidden
+  * Drop upstream merged patch debian/patches/negative-frequency.patch
+  * Modify for libchewing new platform independent format
+    - Remove --datadir in rules
+    - Change libchewing3-data arch to all
+    - Update debian/libchewing3-data.install
+  * Enable testing
+  * Update debian/tests/build for better debug message
+  * Remove Makefile.in in dh_clean
+  * Update debian/libchewing3.symbols for new symbols
+  * Update debian/copyright to copyright-format 1.0
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Fri, 11 Apr 2014 13:17:07 +0800
+
+libchewing (0.3.5-4) unstable; urgency=medium
+
+  [ Martin Pitt ]
+  * debian/tests/control:
+    - Add missing pkg-config test dependency.
+    - Don't pull in all binaries, just libchewing3-dev. This ensures that the
+      -dev package has correct dependencies.
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Merge ubuntu fix for autopkgtest (Closes: #735646)
+  * Update Standards-Version to 3.9.5
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Tue, 18 Feb 2014 22:26:46 +0800
+
+libchewing (0.3.5-3) unstable; urgency=low
+
+  * Merge negative frequency patch (Closes: #722971)
+  * Fix hardening-no-fortify-functions
+  * Fix dh clean
+  * Add XS-Testsuite: autopkgtest
+  * Update watch
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Tue, 01 Oct 2013 20:45:29 +0800
+
+libchewing (0.3.5-2) unstable; urgency=low
+
+  * Add missing build dependency.
+
+ -- Kan-Ru Chen (陳侃如) <koster@debian.org>  Thu, 08 Aug 2013 08:43:22 +0800
+
+libchewing (0.3.5-1) unstable; urgency=low
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * New upstream release. (Closes: #695452, #608615)
+  * Add info page to libchewing3-dev
+  * Update new official website
+  * Remove unused patches
+  * Remove unused dependency
+  * Add symbol for new API chewing_set_logger
+
+  [ Kan-Ru Chen (陳侃如) ]
+  * Make libchewing3-dbg Multi-Arch: same. (Closes: #712883)
+  * Clean generated info files.
+
+ -- Kan-Ru Chen (陳侃如) <koster@debian.org>  Thu, 08 Aug 2013 01:01:54 +0800
+
+libchewing (0.3.4-3) unstable; urgency=low
+
+  * run autoreconf to fix regression with 0.3.4-2.
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 21 Jun 2013 20:15:52 +0900
+
+libchewing (0.3.4-2) unstable; urgency=low
+
+  * Team upload.
+  * Memory alignment patch for sparc. Closes: #709934
+  * Disable test.
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 20 Jun 2013 22:35:31 +0900
+
+libchewing (0.3.4-1) unstable; urgency=low
+
+  * debian/watch looks for googlecode now
+  * Imported Upstream version 0.3.4
+  * Upstream tarball has no chewing.py:
+    put it under debian/
+  * Autoreconf is not needed now.
+  * /usr/lib/*/chewing3/ renamed to /usr/lib/*/chewing/
+  * Patch to remove stamp under data correctly.
+  * Add symbols for libchewing3.
+
+ -- YunQiang Su <wzssyqa@gmail.com>  Sat, 16 Feb 2013 11:05:28 +0800
+
+libchewing (0.3.3-4) unstable; urgency=high
+
+  * Team upload.
+
+  [ Kan-Ru Chen ]
+
+  * Remove --enable-debug, it is for developer only.
+    - Set urgency to high because of possible information leakage.
+  * Tidy up with wrap-and-sort.
+  * debian/control:
+    - Remove DM-Upload-Allowed.
+  * debian/autoreconf.after: removed.
+  * debian/autoreconf.before: ditto.
+
+ -- Kan-Ru Chen <koster@debian.org>  Tue, 17 Apr 2012 12:17:22 +0800
+
+libchewing (0.3.3-3) unstable; urgency=low
+
+  * PATH_MAX patch to src/porting_layer/include/sys/plat_posix.h,
+    instead of include/config.h.in, as not all source files include
+    config.h.
+
+ -- YunQiang Su <wzssyqa@gmail.com>  Tue, 03 Apr 2012 17:16:48 +0800
+
+libchewing (0.3.3-2) unstable; urgency=low
+
+  * Team upload to unstable; add YunQiang Su to uploaders.
+  * install chewing.py to package libchewing3 (Closes: #513773).
+  * patch include/config.h.in
+    to define PATH_MAX if not defined (Closes: #666706).
+
+ -- YunQiang Su <wzssyqa@gmail.com>  Mon, 02 Apr 2012 13:58:10 +0800
+
+libchewing (0.3.3-2~exp) experimental; urgency=low
+
+  * Team upload to fix multiarch bugs.
+    - Install data files to usr/lib, as they are arch depend.
+    - Remove "Multi-arch: forigen" from libchewing3-data.
+  * Bump standard version to 3.9.3.
+  * Add new debug package: libchewing3-dbg.
+  * use --with autoreconf instead of --with autotools_dev.
+
+ -- YunQiang Su <wzssyqa@gmail.com>  Mon, 26 Mar 2012 20:05:57 +0800
+
+libchewing (0.3.3-1) unstable; urgency=low
+
+  * New upstream release
+  * Change debhelper compatibility to 9
+  * Simplify the build rules
+  * Convert to 3.0 (quilt) source format
+  * Convert to MultiArch
+  * Update Maintainer field
+    - Change the Maintainer field to IME Packaging Team
+    - Update the email addresses
+  * Update Standards-Version to 3.9.2
+  * Update Vcs-* info
+  * Build depends on autotools-dev (Closes: #558571).
+
+ -- Kan-Ru Chen <koster@debian.org>  Thu, 25 Aug 2011 00:26:54 +0800
+
+libchewing (0.3.2-1) unstable; urgency=low
+
+  * New Upstream Version
+  * [5d96bf5] Update watch address
+  * [351d417] Add Vcs-Git field
+  * [63cd26a] Add Vcs-Browser field
+  * [e2a59e2] Conflict with scim-chewing << 0.3.3
+  * [cd15be8] Change libchewing3-data from all to any since we build
+    binary data now.
+
+ -- Kanru Chen <koster@debian.org.tw>  Thu, 04 Dec 2008 15:34:03 +0800
+
+libchewing (0.3.1-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Update standards-version to 3.8.0
+  * Add Homepage header
+  * Add Priority to all binary package field
+  * Add Andrew Lee <andrew@linux.org.tw> to Uploaders
+  * Change debhelper compatibility to 7
+  * Simplify debian/rules
+  * Conflict with scim-chewing (<< 0.3.2)
+  * Now build libchewing3-data in binary-indep (Closes: #303000)
+  * Closes: #427974: cannot type any zuo words. Fixed upstream.
+
+ -- Kanru Chen <koster@debian.org.tw>  Wed, 12 Nov 2008 16:48:32 +0800
+
+libchewing (0.3.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump major version to 3
+  * Change debhelper compatibility to 5
+  * Update standards-version to 3.7.2.0
+  * Not install *.la files anymore.
+  * Install -data files to libchewing3/chewing instead of chewing
+    to maintain the compatibility of old -data packages
+  * Update README.Debian
+  * Change libchewing3-data architecture to any (Closes: #303000)
+
+ -- Kanru Chen <koster@debian.org.tw>  Mon, 15 May 2006 16:17:40 +0800
+
+libchewing (0.2.7-1) unstable; urgency=low
+
+  * New upstream release.
+  * New standards version (3.6.2, no changes).
+
+ -- Kanru Chen <koster@debian.org.tw>  Tue, 16 Aug 2005 14:46:14 +0800
+
+libchewing (0.2.6+svn20050326-1) unstable; urgency=high
+
+  * Upstream SVN snapshot.
+    + Using snapshot which fixed some unexpected exit() call.
+  * Change libcheiwng2-dev section to 'libdevel'.
+  * Added missing Build-Depends of dpatch.
+  * Set urgency to high, Closes: #301462: FTBFS: typo in Build-Depends line
+  * Auto generated documents are broken and not really helpful now, remove
+    them temporarily.
+
+ -- Kanru Chen <koster@debian.org.tw>  Wed, 30 Mar 2005 21:46:31 +0800
+
+libchewing (0.2.6-2) unstable; urgency=low
+
+  * libchewing-data: Changed Architecture: any to all
+  * Remove Provides, cause Provides and Conflicts should not be
+    together.
+
+ -- Kanru Chen <koster@debian.org.tw>  Wed,  2 Mar 2005 20:54:18 +0800
+
+libchewing (0.2.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Kanru Chen <koster@debian.org.tw>  Mon, 28 Feb 2005 11:00:45 +0800
+
+libchewing (0.2.5-2) unstable; urgency=low
+
+  * Update descriptions in control file.
+  * Maintainer's email changed.
+  * Execute scripts/remove-autotool.sh after 'make clean'.
+  * Remove doxygen auto produced files after 'make clean'.
+
+ -- Kanru Chen <koster@debian.org.tw>  Fri, 11 Feb 2005 15:20:51 +0800
+
+libchewing (0.2.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Back to normal debian/rules.
+  * Update README.Debian.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Tue, 28 Dec 2004 12:53:56 +0800
+
+libchewing (0.2.4-2) unstable; urgency=low
+
+  * Use cdbs common package build system.
+  * Back to libchewing-data. I did wrong thing.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Thu,  7 Oct 2004 22:18:53 +0800
+
+libchewing (0.2.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * ABI changed.
+  * Change package name form libchewing-data to libchewing1-data and set
+    conflict.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Tue,  5 Oct 2004 20:25:47 +0800
+
+libchewing (0.2.3-2) unstable; urgency=low
+
+  * Added support for pkg-config.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Thu,  5 Aug 2004 23:27:30 +0800
+
+libchewing (0.2.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Wed,  4 Aug 2004 17:56:11 +0800
+
+libchewing (0.2.2-1) unstable; urgency=low
+
+  * New upstream version.
+  * README.Debian.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Tue,  6 Jul 2004 15:23:01 +0800
+
+libchewing (0.2.1-2) unstable; urgency=low
+
+  * Bugfix. dev files now install to correct path.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Tue,  6 Jul 2004 15:19:08 +0800
+
+libchewing (0.2.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Kanru Chen <kanru.96@stu.csie.ncnu.edu.tw>  Sat,  3 Jul 2004 21:08:32 +0800

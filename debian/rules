@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+include /usr/share/dpkg/default.mk
+
+export V=1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --includedir=/usr/include/$(DEB_HOST_MULTIARCH)
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	# libchewing does not support parallel test
+	make check
+endif
+
+override_dh_missing:
+	rm -f debian/*/usr/lib/*/*.la
+	rm -f debian/*/usr/share/info/*.info
+	dh_missing --fail-missing

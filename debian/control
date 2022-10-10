@@ -1,0 +1,89 @@
+Source: libchewing
+Maintainer: Debian Input Method Team <debian-input-method@lists.debian.org>
+Uploaders:
+ Kan-Ru Chen (陳侃如) <koster@debian.org>,
+ Andrew Lee (李健秋) <ajqlee@debian.org>,
+ YunQiang Su <syq@debian.org>,
+ ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
+Section: libs
+Priority: optional
+Build-Depends:
+ debhelper (>= 11~),
+ libncurses-dev,
+ libsqlite3-dev,
+ pkg-config,
+ texinfo,
+Standards-Version: 4.2.1
+Vcs-Browser: https://salsa.debian.org/input-method-team/libchewing
+Vcs-Git: https://salsa.debian.org/input-method-team/libchewing.git
+Homepage: http://chewing.im
+
+Package: libchewing3
+Architecture: any
+Multi-Arch: same
+Depends:
+ libchewing3-data (>= 0.4.0),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Pre-Depends:
+ ${misc:Pre-Depends},
+Breaks:
+ scim-chewing (<< 0.3.3),
+Provides:
+ libchewing,
+Description: intelligent phonetic input method library
+ libchewing is an intelligent phonetic input method library for Chinese.
+ .
+ It provides the core algorithm and logic so that they can be shared among
+ the various input methods like JMCCE, xcin-chewing, scim-chewing,
+ iiimf-chewing, screen-chewing, ime-chewing, etc.
+ .
+ The Chewing input method is a smart bopomofo fonetics input method that
+ is useful for inputing Mandarin Chinese based language.
+ .
+ This package contains shared library used by other programs.
+
+Package: libchewing3-data
+Architecture: all
+Multi-Arch: foreign
+Section: misc
+Depends:
+ ${misc:Depends},
+Breaks:
+ libchewing-data (<= 0.2.7),
+Provides:
+ libchewing-data,
+Description: intelligent phonetic input method library - data files
+ libchewing is an intelligent phonetic input method library for Chinese.
+ .
+ It provides the core algorithm and logic so that they can be shared among
+ the various input methods like JMCCE, xcin-chewing, scim-chewing,
+ iiimf-chewing, screen-chewing, ime-chewing, etc.
+ .
+ The Chewing input method is a smart bopomofo fonetics input method that
+ is useful for inputing Mandarin Chinese based language.
+ .
+ This package contains data files of libchewing3.
+
+Package: libchewing3-dev
+Architecture: any
+Section: libdevel
+Multi-Arch: same
+Depends:
+ libchewing3 (= ${binary:Version}),
+ ${misc:Depends},
+Conflicts:
+ libchewing-dev,
+ libchewing1-dev,
+ libchewing2-dev,
+Description: intelligent phonetic input method library (developer version)
+ libchewing is an intelligent phonetic input method library for Chinese.
+ .
+ It provides the core algorithm and logic so that they can be shared among
+ the various input methods like JMCCE, xcin-chewing, scim-chewing,
+ iiimf-chewing, screen-chewing, ime-chewing, etc.
+ .
+ The Chewing input method is a smart bopomofo fonetics input method that
+ is useful for inputing Mandarin Chinese based language.
+ .
+ This package contains static library and header files for developer.

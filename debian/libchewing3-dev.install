@@ -1,0 +1,4 @@
+usr/include
+usr/lib/*/libchewing.a
+usr/lib/*/libchewing.so
+usr/lib/*/pkgconfig/chewing.pc
